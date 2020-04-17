@@ -6,10 +6,10 @@ services:
       context: extensions/curator/
     environment:
       ELASTICSEARCH_HOST: elasticsearch
-      CRON: 0 0 * * *
+      CRON: 4 1 * * *  # 01:04 daily
       CONFIG_FILE: /usr/share/curator/config/curator.yml
       COMMAND: /usr/share/curator/config/delete_log_files_curator.yml
-      UNIT_COUNT: 2
+      UNIT_COUNT: 4
     networks:
       - elk
     depends_on:

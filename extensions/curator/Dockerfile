@@ -1,9 +1,4 @@
-FROM alpine:3.8
-
-ENV CURATOR_VERSION=5.8.1
-
-RUN apk --update add --no-cache tini python py-pip \
-  && pip install elasticsearch-curator==${CURATOR_VERSION}
+FROM choelea/curator:5.8.1
 
 COPY entrypoint.sh /
 
